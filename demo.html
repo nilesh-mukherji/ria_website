@@ -1,20 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RIA Advisory — Revenue management, reimagined.</title>
-  <meta name="description" content="The world's deepest bench of Oracle Revenue Management experts. RIA Advisory partners with Fortune 500 leaders across Financial Services, Utilities, Healthcare, and the Public Sector to recognize, innovate, and accelerate." />
-  <meta property="og:title" content="RIA Advisory — Revenue management, reimagined." />
-  <meta property="og:description" content="The world's deepest bench of Oracle Revenue Management experts." />
-  <meta name="theme-color" content="#0B0D12" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
-  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
-  <style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>RIA Advisory — Revenue management, reimagined.</title>
+<meta name="description" content="The world's deepest bench of Oracle Revenue Management experts." />
+<meta name="theme-color" content="#0B0D12" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
 /* ============================================================
    RIA Advisory — Design System
    ============================================================ */
@@ -1393,14 +1388,19 @@ section { position: relative; }
   }
 }
 
+
+/* Single-page-app helpers */
+.page[hidden] { display: none !important; }
+.page { animation: page-in 0.5s var(--ease); }
+@keyframes page-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 </style>
 </head>
 <body>
-
-  <!-- NAV -->
+<div class="page" data-page="home" >
+<!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
-      <a href="demo.html" class="logo">
+      <a href="#home" class="logo">
         <span class="logo-mark" style="color: var(--ink);">
           <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
             <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.4" opacity="0.35"/>
@@ -1414,15 +1414,15 @@ section { position: relative; }
 
       <nav>
         <ul class="nav-links">
-          <li><a href="demo-services.html">Services</a></li>
-          <li><a href="demo-industries.html">Industries</a></li>
-          <li><a href="demo-approach.html">Approach</a></li>
-          <li><a href="demo-about.html">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#about">About</a></li>
         </ul>
       </nav>
 
       <div class="nav-cta">
-        <a href="demo-contact.html" class="btn btn-ghost">Start a conversation
+        <a href="#contact" class="btn btn-ghost">Start a conversation
           <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
         </a>
         <button class="menu-toggle" aria-label="Open menu"><span></span></button>
@@ -1432,11 +1432,11 @@ section { position: relative; }
 
   <div class="mobile-menu">
     <ul>
-      <li><a href="demo-services.html">Services</a></li>
-      <li><a href="demo-industries.html">Industries</a></li>
-      <li><a href="demo-approach.html">Approach</a></li>
-      <li><a href="demo-about.html">About</a></li>
-      <li><a href="demo-contact.html">Contact</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 
@@ -1458,11 +1458,11 @@ section { position: relative; }
           we engineer the systems that move trillions.
         </p>
         <div class="hero-actions" data-reveal data-reveal-delay="3">
-          <a href="demo-contact.html" class="btn btn-gold">
+          <a href="#contact" class="btn btn-gold">
             Talk to a partner
             <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
           </a>
-          <a href="demo-services.html" class="btn btn-ghost">Explore capabilities</a>
+          <a href="#services" class="btn btn-ghost">Explore capabilities</a>
         </div>
       </div>
 
@@ -1925,11 +1925,11 @@ section { position: relative; }
           no junior analysts, no follow-ups you didn't ask for.
         </p>
         <div class="cta-actions" data-reveal data-reveal-delay="3">
-          <a href="demo-contact.html" class="btn btn-gold">
+          <a href="#contact" class="btn btn-gold">
             Book the conversation
             <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
           </a>
-          <a href="demo-approach.html" class="btn btn-ghost">See how we work</a>
+          <a href="#approach" class="btn btn-ghost">See how we work</a>
         </div>
       </div>
     </div>
@@ -1946,27 +1946,27 @@ section { position: relative; }
         <div class="footer-col">
           <h5>Capabilities</h5>
           <ul>
-            <li><a href="demo-services.html">Advisory</a></li>
-            <li><a href="demo-services.html">Implementation</a></li>
-            <li><a href="demo-services.html">Managed Services</a></li>
-            <li><a href="demo-services.html">Analytics &amp; AI</a></li>
+            <li><a href="#services">Advisory</a></li>
+            <li><a href="#services">Implementation</a></li>
+            <li><a href="#services">Managed Services</a></li>
+            <li><a href="#services">Analytics &amp; AI</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h5>Industries</h5>
           <ul>
-            <li><a href="demo-industries.html">Financial Services</a></li>
-            <li><a href="demo-industries.html">Utilities &amp; Energy</a></li>
-            <li><a href="demo-industries.html">Healthcare Payers</a></li>
-            <li><a href="demo-industries.html">Public Sector</a></li>
+            <li><a href="#industries">Financial Services</a></li>
+            <li><a href="#industries">Utilities &amp; Energy</a></li>
+            <li><a href="#industries">Healthcare Payers</a></li>
+            <li><a href="#industries">Public Sector</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h5>Company</h5>
           <ul>
-            <li><a href="demo-about.html">About</a></li>
-            <li><a href="demo-approach.html">Approach</a></li>
-            <li><a href="demo-contact.html">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#contact">Contact</a></li>
             <li><a href="#">Careers</a></li>
           </ul>
         </div>
@@ -1982,8 +1982,1248 @@ section { position: relative; }
       </div>
     </div>
   </footer>
+</div>
+<div class="page" data-page="services" hidden>
+<header class="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-mark" style="color: var(--ink);">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.4" opacity="0.35"/>
+            <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>
+            <path d="M32 10 L32 32 L52 44" stroke="#D4B97A" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="32" cy="32" r="2.8" fill="#D4B97A"/>
+          </svg>
+        </span>
+        <span class="logo-text">R<em>I</em>A <span style="color: var(--ink-muted); font-size: 14px; letter-spacing: 0.04em; font-family: var(--font-mono); font-style: normal;">Advisory</span></span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#services" class="is-active">Services</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-ghost">Start a conversation
+          <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </a>
+        <button class="menu-toggle" aria-label="Open menu"><span></span></button>
+      </div>
+    </div>
+  </header>
 
-  <script>
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div class="breadcrumb" data-reveal>
+        <a href="#home">Home</a><span>/</span>Services
+      </div>
+      <h1 data-reveal data-reveal-delay="1">
+        The full revenue<br/>lifecycle, <em>operated</em>.
+      </h1>
+      <p class="lead" data-reveal data-reveal-delay="2">
+        Eight integrated disciplines — from boardroom strategy to
+        24×7 production ops — delivered by the team that wrote the
+        book on Oracle Revenue Management.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES DETAIL -->
+  <section class="section">
+    <div class="container">
+
+      <div class="service-block" data-reveal>
+        <div>
+          <div class="label">01 — Advisory</div>
+          <h2>Business &amp; Technology<br/>Advisory</h2>
+        </div>
+        <div class="right">
+          <p>Strategy, architecture, and roadmaps for revenue-critical platforms. Engagements start with a senior partner — never a junior analyst with a deck template. We surface the constraints other firms paper over and put real numbers next to every recommendation.</p>
+          <div class="pills">
+            <span class="pill">Revenue strategy</span>
+            <span class="pill">Target architecture</span>
+            <span class="pill">Build/buy decisions</span>
+            <span class="pill">Regulatory readiness</span>
+            <span class="pill">Vendor selection</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-block" data-reveal>
+        <div>
+          <div class="label">02 — Implementation</div>
+          <h2>Implementation<br/>&amp; Transformation</h2>
+        </div>
+        <div class="right">
+          <p>Greenfield, replatform, or modernization — we deliver on the ORMB, CC&amp;B, MDM, and C2M stacks with a model proven across hundreds of programs. Our accelerators compress timelines without compromising the audit trail.</p>
+          <div class="pills">
+            <span class="pill">ORMB</span><span class="pill">CC&amp;B</span><span class="pill">MDM</span><span class="pill">C2M</span><span class="pill">Cloud migration</span><span class="pill">Data conversion</span><span class="pill">Integration</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-block" data-reveal>
+        <div>
+          <div class="label">03 — Managed</div>
+          <h2>Managed<br/>Services</h2>
+        </div>
+        <div class="right">
+          <p>Run mode that doesn't sleep. Follow-the-sun operations across India, Manila, and the Americas — SLA-backed, engineering-owned. We don't drop tickets into a queue; we close them.</p>
+          <div class="pills">
+            <span class="pill">24×7 operations</span><span class="pill">L1–L4 support</span><span class="pill">Release governance</span><span class="pill">Continuous improvement</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-block" data-reveal>
+        <div>
+          <div class="label">04 — Cloud</div>
+          <h2>Cloud<br/>&amp; Platform</h2>
+        </div>
+        <div class="right">
+          <p>OCI, AWS, Azure, GCP — the modern substrate underneath your revenue estate. Migration playbooks tuned for stateful, audit-bound, regulated workloads where downtime is a board-level event.</p>
+          <div class="pills">
+            <span class="pill">OCI</span><span class="pill">Multi-cloud</span><span class="pill">Resilience</span><span class="pill">FinOps</span><span class="pill">SecOps</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-block" data-reveal>
+        <div>
+          <div class="label">05 — Analytics</div>
+          <h2>Analytics<br/>&amp; AI</h2>
+        </div>
+        <div class="right">
+          <p>Revenue intelligence built directly on the system of record. Forecasting, leakage detection, anomaly scoring, and a new generation of agentic workflows tuned for billing and settlement operations at enterprise scale.</p>
+          <div class="pills">
+            <span class="pill">Forecasting</span><span class="pill">Leakage detection</span><span class="pill">Anomaly scoring</span><span class="pill">Agentic ops</span><span class="pill">GenAI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-block" data-reveal>
+        <div>
+          <div class="label">06 — QA</div>
+          <h2>Quality<br/>Assurance</h2>
+        </div>
+        <div class="right">
+          <p>Audit-grade release governance, automated regression for ORMB and adjacent platforms, and performance engineering for the largest revenue volumes in the world.</p>
+          <div class="pills">
+            <span class="pill">Test automation</span><span class="pill">Performance</span><span class="pill">Chaos</span><span class="pill">Audit &amp; controls</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-block" data-reveal>
+        <div>
+          <div class="label">07 — Product</div>
+          <h2>Product<br/>Development</h2>
+        </div>
+        <div class="right">
+          <p>Where the standard platform stops, we extend. Purpose-built extensions, customer portals, partner integrations, and accelerator products owned by RIA and licensed to the market.</p>
+          <div class="pills">
+            <span class="pill">Extensions</span><span class="pill">Portals</span><span class="pill">Accelerators</span><span class="pill">IP licensing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-block" data-reveal>
+        <div>
+          <div class="label">08 — BPO</div>
+          <h2>Business<br/>Process Outsourcing</h2>
+        </div>
+        <div class="right">
+          <p>We don't just build the system — we'll run the function. Outsourced billing, receivables, and revenue operations delivered by people who understand the platform end-to-end.</p>
+          <div class="pills">
+            <span class="pill">Billing ops</span><span class="pill">Receivables</span><span class="pill">Reconciliation</span><span class="pill">Customer care</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="eyebrow" data-reveal>Let's build</div>
+        <h2 data-reveal data-reveal-delay="1">Tell us where your<br/>revenue stack <em>hurts.</em></h2>
+        <p class="lead" data-reveal data-reveal-delay="2">A 30-minute call with a managing partner. No decks. No follow-ups you didn't ask for.</p>
+        <div class="cta-actions" data-reveal data-reveal-delay="3">
+          <a href="#contact" class="btn btn-gold">Book the conversation
+            <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>Revenue management, reimagined.</h4>
+          <p>RIA Advisory partners with the world's most demanding enterprises to design, build, and operate the systems that move money.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Capabilities</h5>
+          <ul>
+            <li><a href="#services">Advisory</a></li>
+            <li><a href="#services">Implementation</a></li>
+            <li><a href="#services">Managed Services</a></li>
+            <li><a href="#services">Analytics &amp; AI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Industries</h5>
+          <ul>
+            <li><a href="#industries">Financial Services</a></li>
+            <li><a href="#industries">Utilities &amp; Energy</a></li>
+            <li><a href="#industries">Healthcare Payers</a></li>
+            <li><a href="#industries">Public Sector</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="brand-mark-lg">R<em>I</em>A</div>
+      <div class="footer-bottom">
+        <div>© <span id="y">2026</span> RIA Advisory LLC · Coral Gables, FL</div>
+        <div><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">LinkedIn</a></div>
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="page" data-page="industries" hidden>
+<header class="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-mark" style="color: var(--ink);">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.4" opacity="0.35"/>
+            <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>
+            <path d="M32 10 L32 32 L52 44" stroke="#D4B97A" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="32" cy="32" r="2.8" fill="#D4B97A"/>
+          </svg>
+        </span>
+        <span class="logo-text">R<em>I</em>A <span style="color: var(--ink-muted); font-size: 14px; letter-spacing: 0.04em; font-family: var(--font-mono); font-style: normal;">Advisory</span></span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#industries" class="is-active">Industries</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-ghost">Start a conversation
+          <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </a>
+        <button class="menu-toggle" aria-label="Open menu"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div class="breadcrumb" data-reveal>
+        <a href="#home">Home</a><span>/</span>Industries
+      </div>
+      <h1 data-reveal data-reveal-delay="1">Where capital,<br/>regulation, and<br/><em>complexity</em> meet.</h1>
+      <p class="lead" data-reveal data-reveal-delay="2">
+        Four verticals. The same operating discipline.
+        Trillion-dollar revenue flows, audit-bound, customer-facing,
+        zero tolerance for failure.
+      </p>
+    </div>
+  </section>
+
+  <!-- INDUSTRY DETAIL BLOCKS -->
+  <section class="section">
+    <div class="container">
+
+      <div class="service-block" data-reveal>
+        <div>
+          <div class="label">— 01</div>
+          <h2>Financial<br/>Services</h2>
+        </div>
+        <div class="right">
+          <p>Banks, asset managers, capital markets infrastructure, and insurance carriers. We engineer the pricing engines, fee-billing platforms, and reconciliation systems that move institutional money — under SEC, FINRA, MiFID II, and Basel oversight.</p>
+          <div class="pills">
+            <span class="pill">Wholesale &amp; commercial banking</span>
+            <span class="pill">Capital markets</span>
+            <span class="pill">Asset management</span>
+            <span class="pill">Insurance carriers</span>
+            <span class="pill">Fintech &amp; payments</span>
+          </div>
+          <a href="#contact" class="btn-link" style="margin-top: 12px;">
+            Speak with our FS partner
+            <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="service-block" data-reveal>
+        <div>
+          <div class="label">— 02</div>
+          <h2>Utilities<br/>&amp; Energy</h2>
+        </div>
+        <div class="right">
+          <p>Investor-owned, municipal, and renewables operators. Customer information, billing, settlement, and the meter-to-cash systems behind 38M+ endpoints. Built for the regulators, designed for the rate cases.</p>
+          <div class="pills">
+            <span class="pill">Electric, gas, water</span>
+            <span class="pill">Renewables &amp; storage</span>
+            <span class="pill">Grid operators</span>
+            <span class="pill">Smart metering</span>
+            <span class="pill">CC&amp;B / MDM</span>
+          </div>
+          <a href="#contact" class="btn-link" style="margin-top: 12px;">
+            Speak with our utilities partner
+            <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="service-block" data-reveal>
+        <div>
+          <div class="label">— 03</div>
+          <h2>Healthcare<br/>Payers</h2>
+        </div>
+        <div class="right">
+          <p>Premium billing, capitation, and member-level revenue operations for the largest payers in North America. Medicare, Medicaid, commercial, and exchange products — all on one source of truth.</p>
+          <div class="pills">
+            <span class="pill">Premium billing</span>
+            <span class="pill">Capitation</span>
+            <span class="pill">Member billing</span>
+            <span class="pill">Medicare &amp; Medicaid</span>
+            <span class="pill">Exchanges</span>
+          </div>
+          <a href="#contact" class="btn-link" style="margin-top: 12px;">
+            Speak with our healthcare partner
+            <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="service-block" data-reveal>
+        <div>
+          <div class="label">— 04</div>
+          <h2>Public Sector<br/>&amp; Tax</h2>
+        </div>
+        <div class="right">
+          <p>Treasury, revenue, and tax administration platforms for sovereign and state-level government. Audit-grade, citizen-facing, and built for the scrutiny that comes with public money.</p>
+          <div class="pills">
+            <span class="pill">Revenue administration</span>
+            <span class="pill">Tax collection</span>
+            <span class="pill">Citizen portals</span>
+            <span class="pill">Treasury</span>
+            <span class="pill">Compliance &amp; audit</span>
+          </div>
+          <a href="#contact" class="btn-link" style="margin-top: 12px;">
+            Speak with our public-sector partner
+            <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="stats" data-reveal>
+        <div class="stat">
+          <div class="v"><span data-count="500" data-suffix="+">0</span></div>
+          <div class="l">Programs delivered</div>
+          <div class="d">Across our four core verticals — measured, audited, repeated.</div>
+        </div>
+        <div class="stat">
+          <div class="v"><span data-count="38" data-suffix="M">0</span></div>
+          <div class="l">Meter endpoints</div>
+          <div class="d">Under management for utilities clients across three continents.</div>
+        </div>
+        <div class="stat">
+          <div class="v"><span data-count="12" data-suffix="M+">0</span></div>
+          <div class="l">Healthcare members</div>
+          <div class="d">On platforms we built or operate for national payers.</div>
+        </div>
+        <div class="stat">
+          <div class="v"><span data-count="2.4" data-decimals="1" data-prefix="$" data-suffix="T">0</span></div>
+          <div class="l">Revenue managed</div>
+          <div class="d">Annualized transactional volume across our portfolio.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="eyebrow" data-reveal>Let's build</div>
+        <h2 data-reveal data-reveal-delay="1">Your vertical.<br/>Our <em>specialists.</em></h2>
+        <p class="lead" data-reveal data-reveal-delay="2">Every conversation starts with a partner who has lived in your industry for two decades.</p>
+        <div class="cta-actions" data-reveal data-reveal-delay="3">
+          <a href="#contact" class="btn btn-gold">Book the conversation
+            <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>Revenue management, reimagined.</h4>
+          <p>RIA Advisory partners with the world's most demanding enterprises to design, build, and operate the systems that move money.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Capabilities</h5>
+          <ul>
+            <li><a href="#services">Advisory</a></li>
+            <li><a href="#services">Implementation</a></li>
+            <li><a href="#services">Managed Services</a></li>
+            <li><a href="#services">Analytics &amp; AI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Industries</h5>
+          <ul>
+            <li><a href="#industries">Financial Services</a></li>
+            <li><a href="#industries">Utilities &amp; Energy</a></li>
+            <li><a href="#industries">Healthcare Payers</a></li>
+            <li><a href="#industries">Public Sector</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="brand-mark-lg">R<em>I</em>A</div>
+      <div class="footer-bottom">
+        <div>© <span id="y">2026</span> RIA Advisory LLC · Coral Gables, FL</div>
+        <div><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">LinkedIn</a></div>
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="page" data-page="approach" hidden>
+<header class="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-mark" style="color: var(--ink);">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.4" opacity="0.35"/>
+            <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>
+            <path d="M32 10 L32 32 L52 44" stroke="#D4B97A" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="32" cy="32" r="2.8" fill="#D4B97A"/>
+          </svg>
+        </span>
+        <span class="logo-text">R<em>I</em>A <span style="color: var(--ink-muted); font-size: 14px; letter-spacing: 0.04em; font-family: var(--font-mono); font-style: normal;">Advisory</span></span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#approach" class="is-active">Approach</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-ghost">Start a conversation
+          <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </a>
+        <button class="menu-toggle" aria-label="Open menu"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div class="breadcrumb" data-reveal>
+        <a href="#home">Home</a><span>/</span>Approach
+      </div>
+      <h1 data-reveal data-reveal-delay="1">Recognize.<br/>Innovate.<br/><em>Accelerate.</em></h1>
+      <p class="lead" data-reveal data-reveal-delay="2">
+        A three-act operating model that compresses what most consultancies
+        call a 24-month transformation into the first 9 months of measurable
+        outcomes — and a run-mode that doesn't stop after go-live.
+      </p>
+    </div>
+  </section>
+
+  <!-- METHOD DETAIL -->
+  <section class="section">
+    <div class="container">
+      <div class="approach-grid" data-reveal>
+        <article class="approach-card">
+          <div class="num">i.</div>
+          <h3>Recognize</h3>
+          <p>We don't show up with a deck. A senior partner is inside your operation within 14 days, working the data, the policies, the legacy. We surface the constraints other firms paper over and put real numbers next to every recommendation.</p>
+          <ul class="keys">
+            <li>Embedded discovery</li>
+            <li>Pain-point mapping</li>
+            <li>Outcome contracts</li>
+          </ul>
+        </article>
+
+        <article class="approach-card">
+          <div class="num">ii.</div>
+          <h3>Innovate</h3>
+          <p>Solution design grounded in proprietary IP — accelerators, reference architectures, and platform configurations refined across hundreds of programs. We don't reinvent the rail; we run on it faster.</p>
+          <ul class="keys">
+            <li>Reference architectures</li>
+            <li>Pre-built accelerators</li>
+            <li>Co-innovation labs</li>
+          </ul>
+        </article>
+
+        <article class="approach-card">
+          <div class="num">iii.</div>
+          <h3>Accelerate</h3>
+          <p>Delivery owned by engineers, not slides. Follow-the-sun teams across six continents, SLA-backed managed operations, and a release cadence the rest of the industry envies. The work doesn't end at go-live — it begins there.</p>
+          <ul class="keys">
+            <li>Follow-the-sun delivery</li>
+            <li>SLA-bound operations</li>
+            <li>Continuous outcomes</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div data-reveal>
+          <div class="eyebrow">What it looks like</div>
+          <h2>The first <em>180 days</em>,<br/>in detail.</h2>
+        </div>
+        <p class="lead" data-reveal data-reveal-delay="1">
+          We publish the timeline before we send the SOW. Predictability
+          is a feature.
+        </p>
+      </div>
+
+      <div class="bento">
+        <article class="bento-card span-6" data-reveal>
+          <div>
+            <div class="num">DAYS 0 – 14 · RECOGNIZE</div>
+          </div>
+          <div>
+            <h3>Partner embedded. Discovery underway.</h3>
+            <p>A managing partner is on site within two weeks, paired with our domain leads. We map your revenue topology, audit the legacy estate, and produce a 14-day baseline report with quantified pain points.</p>
+          </div>
+          <div class="tags"><span class="tag">On-site</span><span class="tag">Data audit</span><span class="tag">Baseline</span></div>
+        </article>
+
+        <article class="bento-card span-6" data-reveal data-reveal-delay="1">
+          <div>
+            <div class="num">DAYS 14 – 60 · DESIGN</div>
+          </div>
+          <div>
+            <h3>Target state. Outcome contract. Locked.</h3>
+            <p>Reference architecture, integration map, data model, and a signed outcome contract — every milestone tied to a measurable business KPI, not a delivery artifact.</p>
+          </div>
+          <div class="tags"><span class="tag">Architecture</span><span class="tag">SOW</span><span class="tag">KPI lock</span></div>
+        </article>
+
+        <article class="bento-card span-7" data-reveal>
+          <div>
+            <div class="num">DAYS 60 – 120 · BUILD</div>
+          </div>
+          <div>
+            <h3>Configure, integrate, automate.</h3>
+            <p>Pre-built accelerators compress the configuration cycle by 40–60%. Integration patterns proven across hundreds of programs eliminate guesswork. Daily demos. Weekly outcome reviews. No PowerPoint theater.</p>
+          </div>
+          <div class="tags"><span class="tag">Accelerators</span><span class="tag">Daily demos</span><span class="tag">Outcome reviews</span></div>
+        </article>
+
+        <article class="bento-card span-5" data-reveal data-reveal-delay="1">
+          <div>
+            <div class="num">DAYS 120 – 180 · LAUNCH</div>
+          </div>
+          <div>
+            <h3>Go-live. Run-mode. Compound.</h3>
+            <p>Audit-grade cutover, SLA-bound managed operations from day one, and a roadmap of continuous improvements that compound the original investment.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section class="section industries">
+    <div class="container">
+      <div class="section-head">
+        <div data-reveal>
+          <div class="eyebrow">Operating principles</div>
+          <h2>Five rules<br/>we <em>don't</em> break.</h2>
+        </div>
+        <p class="lead" data-reveal data-reveal-delay="1">
+          The non-negotiables that make our work distinguishable
+          from the rest of the industry.
+        </p>
+      </div>
+
+      <ul class="industry-list" data-reveal>
+        <li class="industry-row">
+          <span class="industry-num">— 01</span>
+          <span class="industry-name">Partners deliver.</span>
+          <span class="industry-desc">The senior person you meet is the senior person on your account — for the duration.</span>
+          <span></span>
+        </li>
+        <li class="industry-row">
+          <span class="industry-num">— 02</span>
+          <span class="industry-name">Outcomes, not artifacts.</span>
+          <span class="industry-desc">Every milestone ties to a business KPI. Decks are documentation, never the deliverable.</span>
+          <span></span>
+        </li>
+        <li class="industry-row">
+          <span class="industry-num">— 03</span>
+          <span class="industry-name">Engineering owns the run.</span>
+          <span class="industry-desc">The engineers who built it run it. No handoff to a separate ops bench.</span>
+          <span></span>
+        </li>
+        <li class="industry-row">
+          <span class="industry-num">— 04</span>
+          <span class="industry-name">Predictability is a feature.</span>
+          <span class="industry-desc">Timelines published before SOW signature. Variance reported weekly.</span>
+          <span></span>
+        </li>
+        <li class="industry-row">
+          <span class="industry-num">— 05</span>
+          <span class="industry-name">Co-own the IP.</span>
+          <span class="industry-desc">Our accelerators license to you. What we build together, you keep.</span>
+          <span></span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="eyebrow" data-reveal>Let's build</div>
+        <h2 data-reveal data-reveal-delay="1">See the method<br/><em>against your data.</em></h2>
+        <p class="lead" data-reveal data-reveal-delay="2">Bring us a real problem. We'll bring back a 14-day baseline and a quantified path forward — no commitment.</p>
+        <div class="cta-actions" data-reveal data-reveal-delay="3">
+          <a href="#contact" class="btn btn-gold">Start the diagnostic
+            <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>Revenue management, reimagined.</h4>
+          <p>RIA Advisory partners with the world's most demanding enterprises to design, build, and operate the systems that move money.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Capabilities</h5>
+          <ul>
+            <li><a href="#services">Advisory</a></li>
+            <li><a href="#services">Implementation</a></li>
+            <li><a href="#services">Managed Services</a></li>
+            <li><a href="#services">Analytics &amp; AI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Industries</h5>
+          <ul>
+            <li><a href="#industries">Financial Services</a></li>
+            <li><a href="#industries">Utilities &amp; Energy</a></li>
+            <li><a href="#industries">Healthcare Payers</a></li>
+            <li><a href="#industries">Public Sector</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="brand-mark-lg">R<em>I</em>A</div>
+      <div class="footer-bottom">
+        <div>© <span id="y">2026</span> RIA Advisory LLC · Coral Gables, FL</div>
+        <div><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">LinkedIn</a></div>
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="page" data-page="about" hidden>
+<header class="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-mark" style="color: var(--ink);">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.4" opacity="0.35"/>
+            <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>
+            <path d="M32 10 L32 32 L52 44" stroke="#D4B97A" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="32" cy="32" r="2.8" fill="#D4B97A"/>
+          </svg>
+        </span>
+        <span class="logo-text">R<em>I</em>A <span style="color: var(--ink-muted); font-size: 14px; letter-spacing: 0.04em; font-family: var(--font-mono); font-style: normal;">Advisory</span></span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#about" class="is-active">About</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-ghost">Start a conversation
+          <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </a>
+        <button class="menu-toggle" aria-label="Open menu"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div class="breadcrumb" data-reveal>
+        <a href="#home">Home</a><span>/</span>About
+      </div>
+      <h1 data-reveal data-reveal-delay="1">A firm built by<br/>the people who<br/>built the <em>category.</em></h1>
+      <p class="lead" data-reveal data-reveal-delay="2">
+        Founded in 2016 by the Oracle leaders who shipped the original
+        Revenue Management product. Nine years later: a global firm,
+        a 180-strong specialist bench, and a portfolio of clients
+        most consultancies would acquire us to access.
+      </p>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div data-reveal>
+          <div class="eyebrow">The story</div>
+          <h2>Nine years.<br/>One <em>obsession.</em></h2>
+        </div>
+        <p class="lead" data-reveal data-reveal-delay="1">
+          We left Oracle to build the firm we wished existed —
+          one that paired the product depth of a founding team with
+          the delivery muscle of a tier-one consultancy. The market
+          rewarded that bet.
+        </p>
+      </div>
+
+      <div class="bento">
+        <article class="bento-card feature span-7" data-reveal>
+          <div><div class="num">2016 · FOUNDING</div></div>
+          <div>
+            <h3>The original ORMB team starts over.</h3>
+            <p>RIA Advisory is founded in Coral Gables, FL by a small group of senior Oracle leaders — the same people who built and grew the Oracle Revenue Management &amp; Billing business from inception.</p>
+          </div>
+        </article>
+
+        <article class="bento-card span-5" data-reveal data-reveal-delay="1">
+          <div><div class="num">2018 · GLOBAL</div></div>
+          <div>
+            <h3>Offices on three continents.</h3>
+            <p>India, Philippines, and the U.K. open within 24 months. Follow-the-sun delivery becomes a structural advantage.</p>
+          </div>
+        </article>
+
+        <article class="bento-card span-4" data-reveal>
+          <div><div class="num">2020 · IP</div></div>
+          <div>
+            <h3>Accelerators ship.</h3>
+            <p>Proprietary platform accelerators reduce configuration timelines by 40–60% across the standard reference architectures.</p>
+          </div>
+        </article>
+
+        <article class="bento-card span-4" data-reveal data-reveal-delay="1">
+          <div><div class="num">2022 · GROWTH</div></div>
+          <div>
+            <h3>Canaccord Genuity advises on growth equity.</h3>
+            <p>Capital raise to expand vertical coverage in Healthcare and Public Sector — both now flagship practices.</p>
+          </div>
+        </article>
+
+        <article class="bento-card span-4" data-reveal data-reveal-delay="2">
+          <div><div class="num">2023 · MERGER</div></div>
+          <div>
+            <h3>TMG Consulting joins the firm.</h3>
+            <p>The combination creates the most comprehensive suite of revenue-management solutions in the market — utilities depth meets financial services scale.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div data-reveal>
+          <div class="eyebrow">Leadership</div>
+          <h2>Partners with<br/><em>20+ years</em> on the rail.</h2>
+        </div>
+        <p class="lead" data-reveal data-reveal-delay="1">
+          Every managing partner has spent two decades in revenue
+          management. They lead the engagements. They take the call.
+        </p>
+      </div>
+
+      <div class="team-grid">
+        <article class="team-card" data-reveal>
+          <div class="team-portrait"><div class="initials">RM</div></div>
+          <div class="team-meta">
+            <h3>Rohit Mehta</h3>
+            <div class="role">Founding Partner · CEO</div>
+          </div>
+        </article>
+        <article class="team-card" data-reveal data-reveal-delay="1">
+          <div class="team-portrait"><div class="initials">AK</div></div>
+          <div class="team-meta">
+            <h3>Anita Krishnan</h3>
+            <div class="role">Managing Partner · Financial Services</div>
+          </div>
+        </article>
+        <article class="team-card" data-reveal data-reveal-delay="2">
+          <div class="team-portrait"><div class="initials">JC</div></div>
+          <div class="team-meta">
+            <h3>James Calloway</h3>
+            <div class="role">Managing Partner · Utilities</div>
+          </div>
+        </article>
+        <article class="team-card" data-reveal>
+          <div class="team-portrait"><div class="initials">SP</div></div>
+          <div class="team-meta">
+            <h3>Sasha Patel</h3>
+            <div class="role">Managing Partner · Healthcare</div>
+          </div>
+        </article>
+        <article class="team-card" data-reveal data-reveal-delay="1">
+          <div class="team-portrait"><div class="initials">DV</div></div>
+          <div class="team-meta">
+            <h3>Diego Vasquez</h3>
+            <div class="role">Managing Partner · Public Sector</div>
+          </div>
+        </article>
+        <article class="team-card" data-reveal data-reveal-delay="2">
+          <div class="team-portrait"><div class="initials">EN</div></div>
+          <div class="team-meta">
+            <h3>Emi Nakamura</h3>
+            <div class="role">Chief Technology Officer</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CULTURE / RECOGNITION -->
+  <section class="section industries">
+    <div class="container">
+      <div class="globe-section">
+        <div data-reveal>
+          <div class="eyebrow" style="margin-bottom: 24px;">Culture</div>
+          <h2>Talent is<br/>the <em>moat.</em></h2>
+          <p class="lead" style="margin-top: 28px;">
+            Great Place to Work–certified four consecutive years.
+            More ORMB specialists than any other firm in the market.
+            And a hiring bar that has stayed deliberately uncomfortable.
+          </p>
+          <div style="margin-top: 32px;">
+            <a href="#" class="btn-link">
+              See open roles
+              <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div data-reveal data-reveal-delay="1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light);">
+          <div style="padding: 32px; border-right: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light);">
+            <div style="font-family: var(--font-serif); font-size: 56px; line-height: 1; color: var(--ink-dark);"><span data-count="4">0</span>×</div>
+            <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(11,13,18,0.55); margin-top: 10px;">Great Place to Work</div>
+          </div>
+          <div style="padding: 32px; border-bottom: 1px solid var(--line-light);">
+            <div style="font-family: var(--font-serif); font-size: 56px; line-height: 1; color: var(--ink-dark);"><span data-count="180" data-suffix="+">0</span></div>
+            <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(11,13,18,0.55); margin-top: 10px;">ORMB specialists</div>
+          </div>
+          <div style="padding: 32px; border-right: 1px solid var(--line-light);">
+            <div style="font-family: var(--font-serif); font-size: 56px; line-height: 1; color: var(--ink-dark);"><span data-count="8">0</span></div>
+            <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(11,13,18,0.55); margin-top: 10px;">Global offices</div>
+          </div>
+          <div style="padding: 32px;">
+            <div style="font-family: var(--font-serif); font-size: 56px; line-height: 1; color: var(--ink-dark);"><span data-count="9">0</span> yrs</div>
+            <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(11,13,18,0.55); margin-top: 10px;">Since founding</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="eyebrow" data-reveal>Let's talk</div>
+        <h2 data-reveal data-reveal-delay="1">Work that<br/><em>moves money.</em></h2>
+        <p class="lead" data-reveal data-reveal-delay="2">Whether you have a problem to solve or a career to start — the conversation starts the same way.</p>
+        <div class="cta-actions" data-reveal data-reveal-delay="3">
+          <a href="#contact" class="btn btn-gold">Get in touch
+            <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </a>
+          <a href="#" class="btn btn-ghost">View careers</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>Revenue management, reimagined.</h4>
+          <p>RIA Advisory partners with the world's most demanding enterprises to design, build, and operate the systems that move money.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Capabilities</h5>
+          <ul>
+            <li><a href="#services">Advisory</a></li>
+            <li><a href="#services">Implementation</a></li>
+            <li><a href="#services">Managed Services</a></li>
+            <li><a href="#services">Analytics &amp; AI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Industries</h5>
+          <ul>
+            <li><a href="#industries">Financial Services</a></li>
+            <li><a href="#industries">Utilities &amp; Energy</a></li>
+            <li><a href="#industries">Healthcare Payers</a></li>
+            <li><a href="#industries">Public Sector</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="brand-mark-lg">R<em>I</em>A</div>
+      <div class="footer-bottom">
+        <div>© <span id="y">2026</span> RIA Advisory LLC · Coral Gables, FL</div>
+        <div><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">LinkedIn</a></div>
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="page" data-page="contact" hidden>
+<header class="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-mark" style="color: var(--ink);">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.4" opacity="0.35"/>
+            <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>
+            <path d="M32 10 L32 32 L52 44" stroke="#D4B97A" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="32" cy="32" r="2.8" fill="#D4B97A"/>
+          </svg>
+        </span>
+        <span class="logo-text">R<em>I</em>A <span style="color: var(--ink-muted); font-size: 14px; letter-spacing: 0.04em; font-family: var(--font-mono); font-style: normal;">Advisory</span></span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="#form" class="btn btn-ghost">Book the call
+          <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </a>
+        <button class="menu-toggle" aria-label="Open menu"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div class="breadcrumb" data-reveal>
+        <a href="#home">Home</a><span>/</span>Contact
+      </div>
+      <h1 data-reveal data-reveal-delay="1">Start the<br/><em>conversation.</em></h1>
+      <p class="lead" data-reveal data-reveal-delay="2">
+        30 minutes. A managing partner — not a junior analyst with a deck template.
+        Bring a real problem. We'll bring back something useful.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section class="section" id="form">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info" data-reveal>
+          <div class="block">
+            <div class="l">For new engagements</div>
+            <div class="v"><a href="mailto:partners@riaadvisory.com">partners@riaadvisory.com</a></div>
+          </div>
+          <div class="block">
+            <div class="l">Media &amp; analysts</div>
+            <div class="v"><a href="mailto:press@riaadvisory.com">press@riaadvisory.com</a></div>
+          </div>
+          <div class="block">
+            <div class="l">Careers</div>
+            <div class="v"><a href="mailto:careers@riaadvisory.com">careers@riaadvisory.com</a></div>
+          </div>
+          <div class="block">
+            <div class="l">Global headquarters</div>
+            <div class="v" style="font-size: 18px; line-height: 1.5;">
+              2811 Ponce de Leon Blvd<br/>
+              Suite 1050<br/>
+              Coral Gables, FL 33134
+            </div>
+          </div>
+          <div class="block">
+            <div class="l">Phone</div>
+            <div class="v"><a href="tel:+13059997000">+1 (305) 999-7000</a></div>
+          </div>
+        </div>
+
+        <form class="form" data-form data-reveal data-reveal-delay="1" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" type="text" placeholder="Jane Doe" required />
+            </div>
+            <div class="field">
+              <label for="company">Company</label>
+              <input id="company" type="text" placeholder="Acme Corporation" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Work email</label>
+              <input id="email" type="email" placeholder="jane@acme.com" required />
+            </div>
+            <div class="field">
+              <label for="role">Role</label>
+              <input id="role" type="text" placeholder="SVP, Revenue Operations" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="industry">Industry</label>
+              <select id="industry">
+                <option>Financial Services</option>
+                <option>Utilities &amp; Energy</option>
+                <option>Healthcare Payers</option>
+                <option>Public Sector</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="topic">Topic</label>
+              <select id="topic">
+                <option>Advisory engagement</option>
+                <option>Implementation / transformation</option>
+                <option>Managed services</option>
+                <option>Analytics &amp; AI</option>
+                <option>General inquiry</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">Tell us where it hurts</label>
+            <textarea id="message" placeholder="The shape of the problem, the timeline you're working against, and what 'good' looks like."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold" style="align-self: flex-start;">
+            Send to a partner
+            <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </button>
+          <p style="font-size: 12px; color: var(--ink-muted); margin-top: 4px;">
+            We reply within one business day. Your information is never shared.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFICES STRIP -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="section-head" style="margin-bottom: 32px;">
+        <div data-reveal>
+          <div class="eyebrow">Global offices</div>
+        </div>
+      </div>
+      <div class="stats" data-reveal style="grid-template-columns: repeat(4, 1fr);">
+        <div class="stat">
+          <div class="v" style="font-size: 32px;">Coral Gables</div>
+          <div class="l">USA · HQ</div>
+        </div>
+        <div class="stat">
+          <div class="v" style="font-size: 32px;">London</div>
+          <div class="l">United Kingdom</div>
+        </div>
+        <div class="stat">
+          <div class="v" style="font-size: 32px;">Toronto</div>
+          <div class="l">Canada</div>
+        </div>
+        <div class="stat">
+          <div class="v" style="font-size: 32px;">Sydney</div>
+          <div class="l">Australia</div>
+        </div>
+        <div class="stat">
+          <div class="v" style="font-size: 32px;">New York</div>
+          <div class="l">USA</div>
+        </div>
+        <div class="stat">
+          <div class="v" style="font-size: 32px;">Bengaluru</div>
+          <div class="l">India</div>
+        </div>
+        <div class="stat">
+          <div class="v" style="font-size: 32px;">Hyderabad</div>
+          <div class="l">India</div>
+        </div>
+        <div class="stat">
+          <div class="v" style="font-size: 32px;">Manila</div>
+          <div class="l">Philippines</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>Revenue management, reimagined.</h4>
+          <p>RIA Advisory partners with the world's most demanding enterprises to design, build, and operate the systems that move money.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Capabilities</h5>
+          <ul>
+            <li><a href="#services">Advisory</a></li>
+            <li><a href="#services">Implementation</a></li>
+            <li><a href="#services">Managed Services</a></li>
+            <li><a href="#services">Analytics &amp; AI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Industries</h5>
+          <ul>
+            <li><a href="#industries">Financial Services</a></li>
+            <li><a href="#industries">Utilities &amp; Energy</a></li>
+            <li><a href="#industries">Healthcare Payers</a></li>
+            <li><a href="#industries">Public Sector</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="brand-mark-lg">R<em>I</em>A</div>
+      <div class="footer-bottom">
+        <div>© <span id="y">2026</span> RIA Advisory LLC · Coral Gables, FL</div>
+        <div><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">LinkedIn</a></div>
+      </div>
+    </div>
+  </footer>
+</div>
+<script>
 // =============================================================
 // RIA Advisory — interactions
 // =============================================================
@@ -2016,8 +3256,9 @@ section { position: relative; }
   }
 
   // ---------- Reveal on scroll ----------
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
+  window.__rebindReveals = function(){
+  if (!('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
@@ -2025,10 +3266,9 @@ section { position: relative; }
         }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
-  } else {
-    document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-visible'));
-  }
+  document.querySelectorAll('[data-page]:not([hidden]) [data-reveal]').forEach((el) => io.observe(el));
+};
+if ('IntersectionObserver' in window) { window.__rebindReveals(); } else { document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-visible')); }
 
   // ---------- Animated counters ----------
   const ease = (t) => 1 - Math.pow(1 - t, 3);
@@ -2048,17 +3288,19 @@ section { position: relative; }
     };
     requestAnimationFrame(tick);
   };
-  if ('IntersectionObserver' in window) {
-    const co = new IntersectionObserver((entries) => {
+  window.__rebindCounters = function(){
+  if (!('IntersectionObserver' in window)) return;
+  const co = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           animateNumber(entry.target);
           co.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.4 });
-    document.querySelectorAll('[data-count]').forEach((el) => co.observe(el));
-  }
+  }, { threshold: 0.4 });
+  document.querySelectorAll('[data-page]:not([hidden]) [data-count]:not([data-counted])').forEach((el) => { el.dataset.counted='1'; co.observe(el); });
+};
+window.__rebindCounters();
 
   // ---------- Year ----------
   const y = document.getElementById('y');
@@ -2080,6 +3322,44 @@ section { position: relative; }
       }, 900);
     });
   }
+})();
+
+
+(function () {
+  'use strict';
+  const pages = document.querySelectorAll('[data-page]');
+  function showPage(key) {
+    if (!key) key = 'home';
+    let found = false;
+    pages.forEach(p => {
+      const match = p.dataset.page === key;
+      if (match) { p.hidden = false; found = true; }
+      else p.hidden = true;
+    });
+    if (!found) { document.querySelector('[data-page="home"]').hidden = false; key = 'home'; }
+    // Update active nav links across all pages
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      const target = (a.getAttribute('href') || '').replace('#','');
+      if (target === key) a.classList.add('is-active'); else a.classList.remove('is-active');
+    });
+    // Close mobile menu if open
+    document.querySelectorAll('.mobile-menu').forEach(m => m.classList.remove('is-open'));
+    document.body.style.overflow = '';
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+    // Re-trigger reveal animations on the now-visible page
+    requestAnimationFrame(() => {
+      document.querySelectorAll('[data-page]:not([hidden]) [data-reveal]').forEach(el => {
+        el.classList.remove('is-visible');
+      });
+      // Force IntersectionObserver to re-fire by re-observing
+      if (window.__rebindReveals) window.__rebindReveals();
+      if (window.__rebindCounters) window.__rebindCounters();
+    });
+  }
+  window.addEventListener('hashchange', () => showPage(location.hash.replace('#','')));
+  // Initial route
+  showPage(location.hash.replace('#','') || 'home');
 })();
 
 </script>
