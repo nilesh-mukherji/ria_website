@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — RIA Advisory</title>
+  <meta name="description" content="A 30-minute conversation with a managing partner. No decks. No junior analysts. No follow-ups you didn't ask for." />
+  <meta name="theme-color" content="#0B0D12" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark" style="color: var(--ink);">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.4" opacity="0.35"/>
+            <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>
+            <path d="M32 10 L32 32 L52 44" stroke="#D4B97A" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="32" cy="32" r="2.8" fill="#D4B97A"/>
+          </svg>
+        </span>
+        <span class="logo-text">R<em>I</em>A <span style="color: var(--ink-muted); font-size: 14px; letter-spacing: 0.04em; font-family: var(--font-mono); font-style: normal;">Advisory</span></span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="approach.html">Approach</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="#form" class="btn btn-ghost">Book the call
+          <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </a>
+        <button class="menu-toggle" aria-label="Open menu"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li><a href="approach.html">Approach</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div class="breadcrumb" data-reveal>
+        <a href="index.html">Home</a><span>/</span>Contact
+      </div>
+      <h1 data-reveal data-reveal-delay="1">Start the<br/><em>conversation.</em></h1>
+      <p class="lead" data-reveal data-reveal-delay="2">
+        30 minutes. A managing partner — not a junior analyst with a deck template.
+        Bring a real problem. We'll bring back something useful.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section class="section" id="form">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info" data-reveal>
+          <div class="block">
+            <div class="l">For new engagements</div>
+            <div class="v"><a href="mailto:partners@riaadvisory.com">partners@riaadvisory.com</a></div>
+          </div>
+          <div class="block">
+            <div class="l">Media &amp; analysts</div>
+            <div class="v"><a href="mailto:press@riaadvisory.com">press@riaadvisory.com</a></div>
+          </div>
+          <div class="block">
+            <div class="l">Careers</div>
+            <div class="v"><a href="mailto:careers@riaadvisory.com">careers@riaadvisory.com</a></div>
+          </div>
+          <div class="block">
+            <div class="l">Global headquarters</div>
+            <div class="v" style="font-size: 18px; line-height: 1.5;">
+              2811 Ponce de Leon Blvd<br/>
+              Suite 1050<br/>
+              Coral Gables, FL 33134
+            </div>
+          </div>
+          <div class="block">
+            <div class="l">Phone</div>
+            <div class="v"><a href="tel:+13059997000">+1 (305) 999-7000</a></div>
+          </div>
+        </div>
+
+        <form class="form" data-form data-reveal data-reveal-delay="1" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" type="text" placeholder="Jane Doe" required />
+            </div>
+            <div class="field">
+              <label for="company">Company</label>
+              <input id="company" type="text" placeholder="Acme Corporation" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Work email</label>
+              <input id="email" type="email" placeholder="jane@acme.com" required />
+            </div>
+            <div class="field">
+              <label for="role">Role</label>
+              <input id="role" type="text" placeholder="SVP, Revenue Operations" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="industry">Industry</label>
+              <select id="industry">
+                <option>Financial Services</option>
+                <option>Utilities &amp; Energy</option>
+                <option>Healthcare Payers</option>
+                <option>Public Sector</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="topic">Topic</label>
+              <select id="topic">
+                <option>Advisory engagement</option>
+                <option>Implementation / transformation</option>
+                <option>Managed services</option>
+                <option>Analytics &amp; AI</option>
+                <option>General inquiry</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">Tell us where it hurts</label>
+            <textarea id="message" placeholder="The shape of the problem, the timeline you're working against, and what 'good' looks like."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold" style="align-self: flex-start;">
+            Send to a partner
+            <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </button>
+          <p style="font-size: 12px; color: var(--ink-muted); margin-top: 4px;">
+            We reply within one business day. Your information is never shared.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFICES STRIP -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="section-head" style="margin-bottom: 32px;">
+        <div data-reveal>
+          <div class="eyebrow">Global offices</div>
+        </div>
+      </div>
+      <div class="stats" data-reveal style="grid-template-columns: repeat(4, 1fr);">
+        <div class="stat">
+          <div class="v" style="font-size: 32px;">Coral Gables</div>
+          <div class="l">USA · HQ</div>
+        </div>
+        <div class="stat">
+          <div class="v" style="font-size: 32px;">London</div>
+          <div class="l">United Kingdom</div>
+        </div>
+        <div class="stat">
+          <div class="v" style="font-size: 32px;">Toronto</div>
+          <div class="l">Canada</div>
+        </div>
+        <div class="stat">
+          <div class="v" style="font-size: 32px;">Sydney</div>
+          <div class="l">Australia</div>
+        </div>
+        <div class="stat">
+          <div class="v" style="font-size: 32px;">New York</div>
+          <div class="l">USA</div>
+        </div>
+        <div class="stat">
+          <div class="v" style="font-size: 32px;">Bengaluru</div>
+          <div class="l">India</div>
+        </div>
+        <div class="stat">
+          <div class="v" style="font-size: 32px;">Hyderabad</div>
+          <div class="l">India</div>
+        </div>
+        <div class="stat">
+          <div class="v" style="font-size: 32px;">Manila</div>
+          <div class="l">Philippines</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>Revenue management, reimagined.</h4>
+          <p>RIA Advisory partners with the world's most demanding enterprises to design, build, and operate the systems that move money.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Capabilities</h5>
+          <ul>
+            <li><a href="services.html">Advisory</a></li>
+            <li><a href="services.html">Implementation</a></li>
+            <li><a href="services.html">Managed Services</a></li>
+            <li><a href="services.html">Analytics &amp; AI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Industries</h5>
+          <ul>
+            <li><a href="industries.html">Financial Services</a></li>
+            <li><a href="industries.html">Utilities &amp; Energy</a></li>
+            <li><a href="industries.html">Healthcare Payers</a></li>
+            <li><a href="industries.html">Public Sector</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="approach.html">Approach</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="brand-mark-lg">R<em>I</em>A</div>
+      <div class="footer-bottom">
+        <div>© <span id="y">2026</span> RIA Advisory LLC · Coral Gables, FL</div>
+        <div><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">LinkedIn</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
