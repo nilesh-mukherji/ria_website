@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>RIA Advisory — Revenue management, reimagined.</title>
+<title>RIATesh Advisory — Revenue management, reimagined.</title>
 <meta name="description" content="The world's deepest bench of Oracle Revenue Management experts." />
-<meta name="theme-color" content="#0B0D12" />
+<meta name="theme-color" content="#1B4E9E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -15,27 +15,38 @@
    ============================================================ */
 
 :root {
-  /* Palette */
-  --bg: #0B0D12;
-  --bg-elev: #11141B;
-  --bg-soft: #161A23;
-  --bg-light: #F6F3EC;
-  --bg-light-soft: #EFEBE1;
-  --ink: #F5F1EA;
-  --ink-soft: #C9C5BC;
-  --ink-muted: #8B8E97;
-  --ink-dark: #0B0D12;
-  --line: rgba(245, 241, 234, 0.08);
-  --line-strong: rgba(245, 241, 234, 0.16);
-  --line-light: rgba(11, 13, 18, 0.08);
+  /* RIATesh Advisory brand palette — official blue + orange on white */
+  --bg: #FFFFFF;
+  --bg-elev: #F7F8FA;
+  --bg-soft: #EEF1F5;
+  --bg-dark: #0A1F4A;          /* deep brand blue for contrast sections */
+  --bg-dark-soft: #0F2A5F;
 
-  /* Accents */
-  --gold: #D4B97A;
-  --gold-soft: #E8D4A2;
-  --gold-deep: #A88A4B;
-  --blue: #6A8BFF;
-  --blue-deep: #3E5BD9;
-  --rust: #C97A4A;
+  --ink: #0A1F4A;              /* deep brand-blue for text */
+  --ink-soft: #3D4C66;
+  --ink-muted: #7A8499;
+  --ink-on-dark: #FFFFFF;
+  --ink-dark: #FFFFFF;         /* legacy alias — text color on dark surfaces */
+
+  --line: rgba(10, 31, 74, 0.10);
+  --line-strong: rgba(10, 31, 74, 0.20);
+  --line-light: rgba(10, 31, 74, 0.10);
+  --line-on-dark: rgba(255, 255, 255, 0.14);
+  --line-on-dark-strong: rgba(255, 255, 255, 0.26);
+
+  /* Brand accents */
+  --blue: #1B4E9E;             /* RIA primary blue */
+  --blue-soft: #3A6EBF;
+  --blue-deep: #0B2B66;
+  --orange: #F26B1F;           /* RIA accent orange */
+  --orange-soft: #FF8C45;
+  --orange-deep: #C84F00;
+
+  /* Legacy gold aliases now mapped to brand orange so existing rules keep working */
+  --gold: var(--orange);
+  --gold-soft: var(--orange-soft);
+  --gold-deep: var(--orange-deep);
+  --rust: var(--orange-deep);
 
   /* Type */
   --font-serif: "Instrument Serif", "GT Sectra", "New York", Georgia, serif;
@@ -70,6 +81,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   font-feature-settings: "ss01", "cv11";
+}
+
+p { color: var(--ink-soft); }
+
+/* Helper: any section with .on-dark inverts ink-related vars within scope */
+.on-dark {
+  --bg: var(--bg-dark);
+  --bg-elev: var(--bg-dark-soft);
+  --bg-soft: var(--bg-dark-soft);
+  --ink: var(--ink-on-dark);
+  --ink-soft: rgba(255, 255, 255, 0.78);
+  --ink-muted: rgba(255, 255, 255, 0.55);
+  --line: var(--line-on-dark);
+  --line-strong: var(--line-on-dark-strong);
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
 }
 
 img, svg { display: block; max-width: 100%; }
@@ -173,22 +200,25 @@ section { position: relative; }
 }
 
 .btn-primary {
-  background: var(--ink);
-  color: var(--ink-dark);
+  background: var(--blue);
+  color: #fff;
 }
-.btn-primary:hover { background: var(--gold); transform: translateY(-1px); }
+.btn-primary:hover { background: var(--blue-deep); transform: translateY(-1px); }
 
 .btn-ghost {
   border-color: var(--line-strong);
   color: var(--ink);
 }
-.btn-ghost:hover { border-color: var(--ink-soft); background: rgba(245,241,234,0.04); }
+.btn-ghost:hover { border-color: var(--ink); background: rgba(10,31,74,0.04); }
 
+.on-dark .btn-ghost:hover { background: rgba(255,255,255,0.06); }
+
+/* Primary CTA — brand orange */
 .btn-gold {
-  background: var(--gold);
-  color: var(--ink-dark);
+  background: var(--orange);
+  color: #fff;
 }
-.btn-gold:hover { background: var(--gold-soft); transform: translateY(-1px); }
+.btn-gold:hover { background: var(--orange-deep); transform: translateY(-1px); color: #fff; }
 
 .btn .arrow { transition: transform 0.4s var(--ease); }
 .btn:hover .arrow { transform: translate(3px, -3px); }
@@ -230,9 +260,9 @@ section { position: relative; }
   border-bottom: 1px solid transparent;
 }
 .nav.is-scrolled::before {
-  background: rgba(11, 13, 18, 0.72);
-  backdrop-filter: blur(18px) saturate(180%);
-  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom-color: var(--line);
 }
 .nav.is-scrolled { padding: 14px 0; }
@@ -373,7 +403,7 @@ section { position: relative; }
   right: -10%;
   width: 60%;
   height: 80%;
-  background: radial-gradient(ellipse at center, rgba(212,185,122,0.18), transparent 60%);
+  background: radial-gradient(ellipse at center, rgba(242, 107, 31, 0.10), transparent 60%);
   filter: blur(60px);
 }
 .hero-bg::after {
@@ -383,7 +413,7 @@ section { position: relative; }
   left: -10%;
   width: 60%;
   height: 70%;
-  background: radial-gradient(ellipse at center, rgba(106,139,255,0.12), transparent 60%);
+  background: radial-gradient(ellipse at center, rgba(27, 78, 158, 0.10), transparent 60%);
   filter: blur(60px);
 }
 
@@ -485,7 +515,7 @@ section { position: relative; }
   padding: 32px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: rgba(245,241,234,0.015);
+  background: var(--bg-elev);
   overflow: hidden;
   position: relative;
 }
@@ -511,7 +541,7 @@ section { position: relative; }
   transform: translateY(-50%);
   width: 80px;
   height: 100%;
-  background: linear-gradient(to right, var(--bg), transparent);
+  background: linear-gradient(to right, var(--bg-elev), transparent);
 }
 .marquee-track {
   display: flex;
@@ -581,9 +611,10 @@ section { position: relative; }
   gap: 24px;
 }
 .bento-card:hover {
-  border-color: var(--line-strong);
-  background: var(--bg-soft);
+  border-color: var(--blue);
+  background: var(--bg);
   transform: translateY(-2px);
+  box-shadow: 0 12px 40px -16px rgba(10, 31, 74, 0.18);
 }
 .bento-card .num {
   font-family: var(--font-mono);
@@ -624,9 +655,23 @@ section { position: relative; }
 
 .bento-card.feature {
   background:
-    radial-gradient(ellipse at top right, rgba(212,185,122,0.15), transparent 50%),
-    var(--bg-elev);
+    linear-gradient(135deg, var(--blue) 0%, var(--blue-deep) 100%);
+  color: var(--ink-on-dark);
+  border-color: transparent;
 }
+.bento-card.feature .num,
+.bento-card.feature p { color: rgba(255,255,255,0.78); }
+.bento-card.feature h3 { color: #fff; }
+.bento-card.feature .glyph {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.24);
+  color: var(--orange-soft);
+}
+.bento-card.feature .tag {
+  color: rgba(255,255,255,0.78);
+  border-color: rgba(255,255,255,0.24);
+}
+.bento-card.feature:hover { box-shadow: 0 16px 50px -16px rgba(11, 43, 102, 0.5); }
 .bento-card.feature h3 { font-size: clamp(28px, 3vw, 44px); }
 
 @media (max-width: 880px) {
@@ -641,23 +686,32 @@ section { position: relative; }
   border-radius: 12px;
   display: grid;
   place-items: center;
-  background: rgba(212,185,122,0.1);
-  border: 1px solid rgba(212,185,122,0.2);
-  color: var(--gold);
+  background: rgba(242, 107, 31, 0.08);
+  border: 1px solid rgba(242, 107, 31, 0.2);
+  color: var(--orange);
 }
 
 /* ============================================================
    Industries
    ============================================================ */
 
+/* Dark blue contrast section */
 .industries {
-  background: var(--bg-light);
-  color: var(--ink-dark);
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
+  --bg: var(--bg-dark);
+  --bg-elev: var(--bg-dark-soft);
+  --ink: var(--ink-on-dark);
+  --ink-soft: rgba(255,255,255,0.75);
+  --ink-muted: rgba(255,255,255,0.5);
+  --line: rgba(255,255,255,0.12);
+  --line-strong: rgba(255,255,255,0.24);
+  --line-light: rgba(255,255,255,0.12);
 }
-.industries .eyebrow { color: var(--gold-deep); }
-.industries .eyebrow::before { background: var(--gold-deep); }
-.industries p { color: rgba(11,13,18,0.62); }
-.industries h2 em { color: var(--gold-deep); }
+.industries .eyebrow { color: var(--orange-soft); }
+.industries .eyebrow::before { background: var(--orange-soft); }
+.industries p { color: rgba(255,255,255,0.75); }
+.industries h2 em { color: var(--orange-soft); }
 
 .industry-list {
   border-top: 1px solid var(--line-light);
@@ -680,20 +734,20 @@ section { position: relative; }
   right: -24px;
   top: 0;
   bottom: 0;
-  background: rgba(11,13,18,0.03);
+  background: rgba(255,255,255,0.04);
   border-radius: var(--radius-lg);
   opacity: 0;
   transition: opacity 0.4s var(--ease);
   z-index: -1;
 }
 .industry-row:hover::before { opacity: 1; }
-.industry-row:hover .industry-name { color: var(--gold-deep); }
-.industry-row:hover .arrow-circle { background: var(--ink-dark); color: var(--ink); border-color: var(--ink-dark); }
+.industry-row:hover .industry-name { color: var(--orange-soft); }
+.industry-row:hover .arrow-circle { background: var(--orange); color: #fff; border-color: var(--orange); }
 
 .industry-num {
   font-family: var(--font-mono);
   font-size: 12px;
-  color: rgba(11,13,18,0.4);
+  color: rgba(255,255,255,0.45);
   letter-spacing: 0.1em;
 }
 .industry-name {
@@ -702,8 +756,9 @@ section { position: relative; }
   letter-spacing: -0.02em;
   line-height: 1;
   transition: color 0.4s var(--ease);
+  color: #fff;
 }
-.industry-desc { color: rgba(11,13,18,0.6); font-size: 15px; }
+.industry-desc { color: rgba(255,255,255,0.62); font-size: 15px; }
 .arrow-circle {
   width: 44px;
   height: 44px;
@@ -847,8 +902,10 @@ section { position: relative; }
 
 .quote-section {
   background:
-    radial-gradient(circle at 80% 50%, rgba(212,185,122,0.08), transparent 60%),
-    var(--bg);
+    radial-gradient(circle at 80% 50%, rgba(242,107,31,0.06), transparent 60%),
+    var(--bg-elev);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .quote {
@@ -860,7 +917,7 @@ section { position: relative; }
   font-family: var(--font-serif);
   font-size: 120px;
   line-height: 0.5;
-  color: var(--gold);
+  color: var(--orange);
   font-style: italic;
   margin-bottom: 20px;
 }
@@ -872,7 +929,7 @@ section { position: relative; }
   letter-spacing: -0.015em;
   color: var(--ink);
 }
-.quote blockquote em { font-style: italic; color: var(--gold-soft); }
+.quote blockquote em { font-style: italic; color: var(--blue); }
 .quote-cite {
   margin-top: 40px;
   font-family: var(--font-mono);
@@ -916,11 +973,11 @@ section { position: relative; }
   aspect-ratio: 16/10;
   position: relative;
   overflow: hidden;
-  background: var(--bg-soft);
+  background: linear-gradient(135deg, var(--bg-elev) 0%, var(--bg-soft) 100%);
   display: grid;
   place-items: center;
 }
-.case-visual svg { width: 60%; height: 60%; opacity: 0.55; transition: transform 0.6s var(--ease); }
+.case-visual svg { width: 60%; height: 60%; opacity: 0.85; transition: transform 0.6s var(--ease); }
 .case:hover .case-visual svg { transform: scale(1.05); }
 .case-visual .tag {
   position: absolute;
@@ -930,12 +987,12 @@ section { position: relative; }
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  background: rgba(11,13,18,0.7);
+  background: rgba(255,255,255,0.92);
   backdrop-filter: blur(8px);
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--line);
   padding: 6px 10px;
   border-radius: 999px;
-  color: var(--ink-soft);
+  color: var(--blue);
 }
 .case-body { padding: 28px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
 .case-body h3 { font-family: var(--font-serif); font-weight: 400; font-size: 24px; letter-spacing: -0.01em; }
@@ -997,8 +1054,8 @@ section { position: relative; }
 .locations li::before {
   content: "";
   width: 6px; height: 6px; border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 12px rgba(212,185,122,0.6);
+  background: var(--orange);
+  box-shadow: 0 0 12px rgba(242,107,31,0.55);
   flex-shrink: 0;
 }
 .locations li .country {
@@ -1012,9 +1069,9 @@ section { position: relative; }
   position: relative;
   border-radius: 50%;
   background:
-    radial-gradient(circle at 30% 30%, rgba(212,185,122,0.15), transparent 50%),
-    radial-gradient(circle at 70% 70%, rgba(106,139,255,0.1), transparent 60%),
-    var(--bg-soft);
+    radial-gradient(circle at 30% 30%, rgba(242,107,31,0.10), transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(27,78,158,0.10), transparent 60%),
+    var(--bg-elev);
   border: 1px solid var(--line-strong);
   overflow: hidden;
   display: grid;
@@ -1025,7 +1082,7 @@ section { position: relative; }
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 1px 1px, rgba(245,241,234,0.12) 1px, transparent 0);
+    radial-gradient(circle at 1px 1px, rgba(10,31,74,0.12) 1px, transparent 0);
   background-size: 14px 14px;
   mask-image: radial-gradient(circle at center, black 30%, transparent 75%);
   -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 75%);
@@ -1045,14 +1102,30 @@ section { position: relative; }
    CTA
    ============================================================ */
 
-.cta-section { padding: clamp(80px, 12vw, 160px) 0; position: relative; overflow: hidden; }
+.cta-section {
+  padding: clamp(80px, 12vw, 160px) 0;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
+  --ink: var(--ink-on-dark);
+  --ink-soft: rgba(255,255,255,0.78);
+  --ink-muted: rgba(255,255,255,0.55);
+  --line-strong: rgba(255,255,255,0.24);
+}
+.cta-section .eyebrow { color: var(--orange-soft); }
+.cta-section .eyebrow::before { background: var(--orange-soft); }
+.cta-section h2 em { color: var(--orange-soft); }
+.cta-section p { color: rgba(255,255,255,0.78); }
+.cta-section .btn-ghost { color: #fff; border-color: rgba(255,255,255,0.30); }
+.cta-section .btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.6); }
 .cta-section::before {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 20% 100%, rgba(212,185,122,0.2), transparent 50%),
-    radial-gradient(ellipse at 80% 0%, rgba(106,139,255,0.12), transparent 50%);
+    radial-gradient(ellipse at 20% 100%, rgba(242,107,31,0.22), transparent 55%),
+    radial-gradient(ellipse at 80% 0%, rgba(58,110,191,0.30), transparent 55%);
   pointer-events: none;
 }
 .cta-inner {
@@ -1070,12 +1143,23 @@ section { position: relative; }
    ============================================================ */
 
 .footer {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(255,255,255,0.10);
   padding-top: 80px;
   padding-bottom: 32px;
-  background: var(--bg);
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
   position: relative;
+  --ink: var(--ink-on-dark);
+  --ink-soft: rgba(255,255,255,0.78);
+  --ink-muted: rgba(255,255,255,0.55);
+  --line: rgba(255,255,255,0.10);
+  --line-strong: rgba(255,255,255,0.24);
 }
+.footer h4, .footer h5 { color: #fff; }
+.footer .footer-col a { color: rgba(255,255,255,0.72); }
+.footer .footer-col a:hover { color: var(--orange-soft); }
+.footer .footer-bottom a { color: rgba(255,255,255,0.55); }
+.footer .footer-bottom a:hover { color: #fff; }
 
 .footer-top {
   display: grid;
@@ -1137,13 +1221,13 @@ section { position: relative; }
   line-height: 0.9;
   letter-spacing: -0.04em;
   color: transparent;
-  -webkit-text-stroke: 1px var(--line-strong);
+  -webkit-text-stroke: 1px rgba(255,255,255,0.18);
   text-align: center;
   padding: 40px 0 20px;
   user-select: none;
   pointer-events: none;
 }
-.brand-mark-lg em { font-style: italic; -webkit-text-stroke-color: var(--gold-deep); }
+.brand-mark-lg em { font-style: italic; -webkit-text-stroke-color: var(--orange); }
 
 /* ============================================================
    Inner page header (sub-hero)
@@ -1155,12 +1239,15 @@ section { position: relative; }
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
+  background: var(--bg-elev);
 }
 .page-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 100%, rgba(212,185,122,0.12), transparent 60%);
+  background:
+    radial-gradient(ellipse at 0% 100%, rgba(27,78,158,0.10), transparent 50%),
+    radial-gradient(ellipse at 100% 0%, rgba(242,107,31,0.08), transparent 50%);
 }
 .page-hero-inner { position: relative; }
 .page-hero .breadcrumb {
@@ -1183,7 +1270,7 @@ section { position: relative; }
   max-width: 16ch;
   margin-bottom: 28px;
 }
-.page-hero h1 em { font-style: italic; color: var(--gold-soft); }
+.page-hero h1 em { font-style: italic; color: var(--orange); }
 .page-hero .lead { max-width: 62ch; font-size: clamp(17px, 1.4vw, 21px); }
 
 /* ============================================================
@@ -1283,17 +1370,18 @@ section { position: relative; }
   color: var(--ink-muted);
 }
 .field input, .field textarea, .field select {
-  background: var(--bg);
+  background: #fff;
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 14px 16px;
   color: var(--ink);
   font: inherit;
-  transition: border-color 0.3s var(--ease);
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 .field input:focus, .field textarea:focus, .field select:focus {
   outline: none;
-  border-color: var(--gold);
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(27,78,158,0.12);
 }
 .field textarea { resize: vertical; min-height: 120px; }
 
@@ -1320,7 +1408,7 @@ section { position: relative; }
 .team-portrait {
   aspect-ratio: 4/5;
   position: relative;
-  background: linear-gradient(180deg, var(--bg-soft), var(--bg));
+  background: linear-gradient(160deg, var(--blue) 0%, var(--blue-deep) 100%);
   overflow: hidden;
   display: grid;
   place-items: center;
@@ -1329,15 +1417,17 @@ section { position: relative; }
   font-family: var(--font-serif);
   font-size: 80px;
   font-style: italic;
-  color: var(--gold-soft);
-  opacity: 0.6;
+  color: #fff;
+  opacity: 0.85;
+  position: relative;
+  z-index: 2;
 }
 .team-portrait::before {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 50% 30%, rgba(212,185,122,0.15), transparent 60%);
+    radial-gradient(ellipse at 70% 30%, rgba(242,107,31,0.35), transparent 60%);
 }
 .team-meta { padding: 24px; }
 .team-meta h3 { font-family: var(--font-serif); font-weight: 400; font-size: 22px; }
@@ -1594,7 +1684,6 @@ html, body { overflow-x: hidden; max-width: 100vw; }
 }
 
 
-/* Single-page-app helpers */
 .page[hidden] { display: none !important; }
 .page { animation: page-in 0.45s var(--ease); }
 @keyframes page-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
@@ -1610,11 +1699,11 @@ html, body { overflow-x: hidden; max-width: 100vw; }
           <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
             <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.4" opacity="0.35"/>
             <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>
-            <path d="M32 10 L32 32 L52 44" stroke="#D4B97A" stroke-width="2.4" stroke-linecap="round"/>
-            <circle cx="32" cy="32" r="2.8" fill="#D4B97A"/>
+            <path d="M32 10 L32 32 L52 44" stroke="#F26B1F" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="32" cy="32" r="2.8" fill="#F26B1F"/>
           </svg>
         </span>
-        <span class="logo-text">R<em>I</em>A <span style="color: var(--ink-muted); font-size: 14px; letter-spacing: 0.04em; font-family: var(--font-mono); font-style: normal;">Advisory</span></span>
+        <span class="logo-text">RIA<em>tesh</em> <span style="color: var(--ink-muted); font-size: 14px; letter-spacing: 0.04em; font-family: var(--font-mono); font-style: normal;">Advisory</span></span>
       </a>
 
       <nav>
@@ -1924,7 +2013,7 @@ html, body { overflow-x: hidden; max-width: 100vw; }
     <div class="container">
       <div class="section-head">
         <div data-reveal>
-          <div class="eyebrow">The RIA Method</div>
+          <div class="eyebrow">The RIATesh Method</div>
           <h2>Recognize. Innovate.<br/><em>Accelerate.</em></h2>
         </div>
         <p class="lead" data-reveal data-reveal-delay="1">
@@ -1977,7 +2066,7 @@ html, body { overflow-x: hidden; max-width: 100vw; }
       <div class="quote" data-reveal>
         <div class="quote-mark">"</div>
         <blockquote>
-          RIA's depth in revenue management gave us something no other firm could —
+          RIATesh's depth in revenue management gave us something no other firm could —
           <em>certainty</em>. They grasped a uniquely complex business overnight and delivered
           a clean, on-schedule rollout across every line.
         </blockquote>
@@ -2008,18 +2097,18 @@ html, body { overflow-x: hidden; max-width: 100vw; }
           <div class="case-visual">
             <span class="tag">Financial Services</span>
             <svg viewBox="0 0 200 120" fill="none">
-              <path d="M10 100 L40 70 L70 80 L100 40 L130 55 L160 30 L190 45" stroke="#D4B97A" stroke-width="2"/>
+              <path d="M10 100 L40 70 L70 80 L100 40 L130 55 L160 30 L190 45" stroke="#F26B1F" stroke-width="2"/>
               <path d="M10 100 L40 70 L70 80 L100 40 L130 55 L160 30 L190 45 L190 110 L10 110 Z" fill="url(#g1)" opacity="0.3"/>
               <defs>
                 <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#D4B97A"/>
-                  <stop offset="1" stop-color="#D4B97A" stop-opacity="0"/>
+                  <stop offset="0" stop-color="#F26B1F"/>
+                  <stop offset="1" stop-color="#F26B1F" stop-opacity="0"/>
                 </linearGradient>
               </defs>
               <g opacity="0.5">
-                <line x1="10" y1="110" x2="190" y2="110" stroke="#F5F1EA" stroke-width="0.5"/>
-                <line x1="10" y1="80" x2="190" y2="80" stroke="#F5F1EA" stroke-width="0.3"/>
-                <line x1="10" y1="50" x2="190" y2="50" stroke="#F5F1EA" stroke-width="0.3"/>
+                <line x1="10" y1="110" x2="190" y2="110" stroke="#1B4E9E" stroke-width="0.5"/>
+                <line x1="10" y1="80" x2="190" y2="80" stroke="#1B4E9E" stroke-width="0.3"/>
+                <line x1="10" y1="50" x2="190" y2="50" stroke="#1B4E9E" stroke-width="0.3"/>
               </g>
             </svg>
           </div>
@@ -2038,15 +2127,15 @@ html, body { overflow-x: hidden; max-width: 100vw; }
           <div class="case-visual">
             <span class="tag">Utilities</span>
             <svg viewBox="0 0 200 120" fill="none">
-              <circle cx="100" cy="60" r="40" stroke="#D4B97A" stroke-width="1.4"/>
-              <circle cx="100" cy="60" r="28" stroke="#F5F1EA" stroke-width="1" opacity="0.4"/>
-              <circle cx="100" cy="60" r="16" stroke="#F5F1EA" stroke-width="1" opacity="0.3"/>
-              <circle cx="60" cy="60" r="3" fill="#D4B97A"/>
-              <circle cx="140" cy="60" r="3" fill="#D4B97A"/>
-              <circle cx="100" cy="20" r="3" fill="#D4B97A"/>
-              <circle cx="100" cy="100" r="3" fill="#D4B97A"/>
-              <line x1="60" y1="60" x2="140" y2="60" stroke="#D4B97A" stroke-width="0.6" opacity="0.5"/>
-              <line x1="100" y1="20" x2="100" y2="100" stroke="#D4B97A" stroke-width="0.6" opacity="0.5"/>
+              <circle cx="100" cy="60" r="40" stroke="#F26B1F" stroke-width="1.4"/>
+              <circle cx="100" cy="60" r="28" stroke="#1B4E9E" stroke-width="1" opacity="0.4"/>
+              <circle cx="100" cy="60" r="16" stroke="#1B4E9E" stroke-width="1" opacity="0.3"/>
+              <circle cx="60" cy="60" r="3" fill="#F26B1F"/>
+              <circle cx="140" cy="60" r="3" fill="#F26B1F"/>
+              <circle cx="100" cy="20" r="3" fill="#F26B1F"/>
+              <circle cx="100" cy="100" r="3" fill="#F26B1F"/>
+              <line x1="60" y1="60" x2="140" y2="60" stroke="#F26B1F" stroke-width="0.6" opacity="0.5"/>
+              <line x1="100" y1="20" x2="100" y2="100" stroke="#F26B1F" stroke-width="0.6" opacity="0.5"/>
             </svg>
           </div>
           <div class="case-body">
@@ -2064,12 +2153,12 @@ html, body { overflow-x: hidden; max-width: 100vw; }
           <div class="case-visual">
             <span class="tag">Healthcare</span>
             <svg viewBox="0 0 200 120" fill="none">
-              <rect x="20" y="80" width="20" height="20" fill="#D4B97A" opacity="0.7"/>
-              <rect x="50" y="60" width="20" height="40" fill="#D4B97A" opacity="0.8"/>
-              <rect x="80" y="45" width="20" height="55" fill="#D4B97A"/>
-              <rect x="110" y="30" width="20" height="70" fill="#D4B97A"/>
+              <rect x="20" y="80" width="20" height="20" fill="#F26B1F" opacity="0.7"/>
+              <rect x="50" y="60" width="20" height="40" fill="#F26B1F" opacity="0.8"/>
+              <rect x="80" y="45" width="20" height="55" fill="#F26B1F"/>
+              <rect x="110" y="30" width="20" height="70" fill="#F26B1F"/>
               <rect x="140" y="18" width="20" height="82" fill="#E8D4A2"/>
-              <line x1="20" y1="100" x2="170" y2="100" stroke="#F5F1EA" stroke-width="0.6" opacity="0.5"/>
+              <line x1="20" y1="100" x2="170" y2="100" stroke="#1B4E9E" stroke-width="0.6" opacity="0.5"/>
             </svg>
           </div>
           <div class="case-body">
@@ -2146,7 +2235,7 @@ html, body { overflow-x: hidden; max-width: 100vw; }
       <div class="footer-top">
         <div class="footer-brand">
           <h4>Revenue management, reimagined.</h4>
-          <p>RIA Advisory partners with the world's most demanding enterprises to design, build, and operate the systems that move money.</p>
+          <p>RIATesh Advisory partners with the world's most demanding enterprises to design, build, and operate the systems that move money.</p>
         </div>
         <div class="footer-col">
           <h5>Capabilities</h5>
@@ -2177,10 +2266,10 @@ html, body { overflow-x: hidden; max-width: 100vw; }
         </div>
       </div>
 
-      <div class="brand-mark-lg">R<em>I</em>A</div>
+      <div class="brand-mark-lg">RIA<em>tesh</em></div>
 
       <div class="footer-bottom">
-        <div>© <span id="y">2026</span> RIA Advisory LLC · Coral Gables, FL</div>
+        <div>© <span id="y">2026</span> RIATesh Advisory LLC · Coral Gables, FL</div>
         <div>
           <a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">LinkedIn</a>
         </div>
@@ -2196,11 +2285,11 @@ html, body { overflow-x: hidden; max-width: 100vw; }
           <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
             <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.4" opacity="0.35"/>
             <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>
-            <path d="M32 10 L32 32 L52 44" stroke="#D4B97A" stroke-width="2.4" stroke-linecap="round"/>
-            <circle cx="32" cy="32" r="2.8" fill="#D4B97A"/>
+            <path d="M32 10 L32 32 L52 44" stroke="#F26B1F" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="32" cy="32" r="2.8" fill="#F26B1F"/>
           </svg>
         </span>
-        <span class="logo-text">R<em>I</em>A <span style="color: var(--ink-muted); font-size: 14px; letter-spacing: 0.04em; font-family: var(--font-mono); font-style: normal;">Advisory</span></span>
+        <span class="logo-text">RIA<em>tesh</em> <span style="color: var(--ink-muted); font-size: 14px; letter-spacing: 0.04em; font-family: var(--font-mono); font-style: normal;">Advisory</span></span>
       </a>
       <nav>
         <ul class="nav-links">
@@ -2383,7 +2472,7 @@ html, body { overflow-x: hidden; max-width: 100vw; }
       <div class="footer-top">
         <div class="footer-brand">
           <h4>Revenue management, reimagined.</h4>
-          <p>RIA Advisory partners with the world's most demanding enterprises to design, build, and operate the systems that move money.</p>
+          <p>RIATesh Advisory partners with the world's most demanding enterprises to design, build, and operate the systems that move money.</p>
         </div>
         <div class="footer-col">
           <h5>Capabilities</h5>
@@ -2413,9 +2502,9 @@ html, body { overflow-x: hidden; max-width: 100vw; }
           </ul>
         </div>
       </div>
-      <div class="brand-mark-lg">R<em>I</em>A</div>
+      <div class="brand-mark-lg">RIA<em>tesh</em></div>
       <div class="footer-bottom">
-        <div>© <span id="y">2026</span> RIA Advisory LLC · Coral Gables, FL</div>
+        <div>© <span id="y">2026</span> RIATesh Advisory LLC · Coral Gables, FL</div>
         <div><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">LinkedIn</a></div>
       </div>
     </div>
@@ -2429,11 +2518,11 @@ html, body { overflow-x: hidden; max-width: 100vw; }
           <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
             <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.4" opacity="0.35"/>
             <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>
-            <path d="M32 10 L32 32 L52 44" stroke="#D4B97A" stroke-width="2.4" stroke-linecap="round"/>
-            <circle cx="32" cy="32" r="2.8" fill="#D4B97A"/>
+            <path d="M32 10 L32 32 L52 44" stroke="#F26B1F" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="32" cy="32" r="2.8" fill="#F26B1F"/>
           </svg>
         </span>
-        <span class="logo-text">R<em>I</em>A <span style="color: var(--ink-muted); font-size: 14px; letter-spacing: 0.04em; font-family: var(--font-mono); font-style: normal;">Advisory</span></span>
+        <span class="logo-text">RIA<em>tesh</em> <span style="color: var(--ink-muted); font-size: 14px; letter-spacing: 0.04em; font-family: var(--font-mono); font-style: normal;">Advisory</span></span>
       </a>
       <nav>
         <ul class="nav-links">
@@ -2616,7 +2705,7 @@ html, body { overflow-x: hidden; max-width: 100vw; }
       <div class="footer-top">
         <div class="footer-brand">
           <h4>Revenue management, reimagined.</h4>
-          <p>RIA Advisory partners with the world's most demanding enterprises to design, build, and operate the systems that move money.</p>
+          <p>RIATesh Advisory partners with the world's most demanding enterprises to design, build, and operate the systems that move money.</p>
         </div>
         <div class="footer-col">
           <h5>Capabilities</h5>
@@ -2646,9 +2735,9 @@ html, body { overflow-x: hidden; max-width: 100vw; }
           </ul>
         </div>
       </div>
-      <div class="brand-mark-lg">R<em>I</em>A</div>
+      <div class="brand-mark-lg">RIA<em>tesh</em></div>
       <div class="footer-bottom">
-        <div>© <span id="y">2026</span> RIA Advisory LLC · Coral Gables, FL</div>
+        <div>© <span id="y">2026</span> RIATesh Advisory LLC · Coral Gables, FL</div>
         <div><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">LinkedIn</a></div>
       </div>
     </div>
@@ -2662,11 +2751,11 @@ html, body { overflow-x: hidden; max-width: 100vw; }
           <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
             <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.4" opacity="0.35"/>
             <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>
-            <path d="M32 10 L32 32 L52 44" stroke="#D4B97A" stroke-width="2.4" stroke-linecap="round"/>
-            <circle cx="32" cy="32" r="2.8" fill="#D4B97A"/>
+            <path d="M32 10 L32 32 L52 44" stroke="#F26B1F" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="32" cy="32" r="2.8" fill="#F26B1F"/>
           </svg>
         </span>
-        <span class="logo-text">R<em>I</em>A <span style="color: var(--ink-muted); font-size: 14px; letter-spacing: 0.04em; font-family: var(--font-mono); font-style: normal;">Advisory</span></span>
+        <span class="logo-text">RIA<em>tesh</em> <span style="color: var(--ink-muted); font-size: 14px; letter-spacing: 0.04em; font-family: var(--font-mono); font-style: normal;">Advisory</span></span>
       </a>
       <nav>
         <ul class="nav-links">
@@ -2879,7 +2968,7 @@ html, body { overflow-x: hidden; max-width: 100vw; }
       <div class="footer-top">
         <div class="footer-brand">
           <h4>Revenue management, reimagined.</h4>
-          <p>RIA Advisory partners with the world's most demanding enterprises to design, build, and operate the systems that move money.</p>
+          <p>RIATesh Advisory partners with the world's most demanding enterprises to design, build, and operate the systems that move money.</p>
         </div>
         <div class="footer-col">
           <h5>Capabilities</h5>
@@ -2909,9 +2998,9 @@ html, body { overflow-x: hidden; max-width: 100vw; }
           </ul>
         </div>
       </div>
-      <div class="brand-mark-lg">R<em>I</em>A</div>
+      <div class="brand-mark-lg">RIA<em>tesh</em></div>
       <div class="footer-bottom">
-        <div>© <span id="y">2026</span> RIA Advisory LLC · Coral Gables, FL</div>
+        <div>© <span id="y">2026</span> RIATesh Advisory LLC · Coral Gables, FL</div>
         <div><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">LinkedIn</a></div>
       </div>
     </div>
@@ -2925,11 +3014,11 @@ html, body { overflow-x: hidden; max-width: 100vw; }
           <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
             <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.4" opacity="0.35"/>
             <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>
-            <path d="M32 10 L32 32 L52 44" stroke="#D4B97A" stroke-width="2.4" stroke-linecap="round"/>
-            <circle cx="32" cy="32" r="2.8" fill="#D4B97A"/>
+            <path d="M32 10 L32 32 L52 44" stroke="#F26B1F" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="32" cy="32" r="2.8" fill="#F26B1F"/>
           </svg>
         </span>
-        <span class="logo-text">R<em>I</em>A <span style="color: var(--ink-muted); font-size: 14px; letter-spacing: 0.04em; font-family: var(--font-mono); font-style: normal;">Advisory</span></span>
+        <span class="logo-text">RIA<em>tesh</em> <span style="color: var(--ink-muted); font-size: 14px; letter-spacing: 0.04em; font-family: var(--font-mono); font-style: normal;">Advisory</span></span>
       </a>
       <nav>
         <ul class="nav-links">
@@ -2994,7 +3083,7 @@ html, body { overflow-x: hidden; max-width: 100vw; }
           <div><div class="num">2016 · FOUNDING</div></div>
           <div>
             <h3>The original ORMB team starts over.</h3>
-            <p>RIA Advisory is founded in Coral Gables, FL by a small group of senior Oracle leaders — the same people who built and grew the Oracle Revenue Management &amp; Billing business from inception.</p>
+            <p>RIATesh Advisory is founded in Coral Gables, FL by a small group of senior Oracle leaders — the same people who built and grew the Oracle Revenue Management &amp; Billing business from inception.</p>
           </div>
         </article>
 
@@ -3118,19 +3207,19 @@ html, body { overflow-x: hidden; max-width: 100vw; }
         <div data-reveal data-reveal-delay="1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light);">
           <div style="padding: 32px; border-right: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light);">
             <div style="font-family: var(--font-serif); font-size: 56px; line-height: 1; color: var(--ink-dark);"><span data-count="4">0</span>×</div>
-            <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(11,13,18,0.55); margin-top: 10px;">Great Place to Work</div>
+            <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 10px;">Great Place to Work</div>
           </div>
           <div style="padding: 32px; border-bottom: 1px solid var(--line-light);">
             <div style="font-family: var(--font-serif); font-size: 56px; line-height: 1; color: var(--ink-dark);"><span data-count="180" data-suffix="+">0</span></div>
-            <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(11,13,18,0.55); margin-top: 10px;">ORMB specialists</div>
+            <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 10px;">ORMB specialists</div>
           </div>
           <div style="padding: 32px; border-right: 1px solid var(--line-light);">
             <div style="font-family: var(--font-serif); font-size: 56px; line-height: 1; color: var(--ink-dark);"><span data-count="8">0</span></div>
-            <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(11,13,18,0.55); margin-top: 10px;">Global offices</div>
+            <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 10px;">Global offices</div>
           </div>
           <div style="padding: 32px;">
             <div style="font-family: var(--font-serif); font-size: 56px; line-height: 1; color: var(--ink-dark);"><span data-count="9">0</span> yrs</div>
-            <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(11,13,18,0.55); margin-top: 10px;">Since founding</div>
+            <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 10px;">Since founding</div>
           </div>
         </div>
       </div>
@@ -3158,7 +3247,7 @@ html, body { overflow-x: hidden; max-width: 100vw; }
       <div class="footer-top">
         <div class="footer-brand">
           <h4>Revenue management, reimagined.</h4>
-          <p>RIA Advisory partners with the world's most demanding enterprises to design, build, and operate the systems that move money.</p>
+          <p>RIATesh Advisory partners with the world's most demanding enterprises to design, build, and operate the systems that move money.</p>
         </div>
         <div class="footer-col">
           <h5>Capabilities</h5>
@@ -3188,9 +3277,9 @@ html, body { overflow-x: hidden; max-width: 100vw; }
           </ul>
         </div>
       </div>
-      <div class="brand-mark-lg">R<em>I</em>A</div>
+      <div class="brand-mark-lg">RIA<em>tesh</em></div>
       <div class="footer-bottom">
-        <div>© <span id="y">2026</span> RIA Advisory LLC · Coral Gables, FL</div>
+        <div>© <span id="y">2026</span> RIATesh Advisory LLC · Coral Gables, FL</div>
         <div><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">LinkedIn</a></div>
       </div>
     </div>
@@ -3204,11 +3293,11 @@ html, body { overflow-x: hidden; max-width: 100vw; }
           <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
             <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.4" opacity="0.35"/>
             <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>
-            <path d="M32 10 L32 32 L52 44" stroke="#D4B97A" stroke-width="2.4" stroke-linecap="round"/>
-            <circle cx="32" cy="32" r="2.8" fill="#D4B97A"/>
+            <path d="M32 10 L32 32 L52 44" stroke="#F26B1F" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="32" cy="32" r="2.8" fill="#F26B1F"/>
           </svg>
         </span>
-        <span class="logo-text">R<em>I</em>A <span style="color: var(--ink-muted); font-size: 14px; letter-spacing: 0.04em; font-family: var(--font-mono); font-style: normal;">Advisory</span></span>
+        <span class="logo-text">RIA<em>tesh</em> <span style="color: var(--ink-muted); font-size: 14px; letter-spacing: 0.04em; font-family: var(--font-mono); font-style: normal;">Advisory</span></span>
       </a>
       <nav>
         <ul class="nav-links">
@@ -3257,15 +3346,15 @@ html, body { overflow-x: hidden; max-width: 100vw; }
         <div class="contact-info" data-reveal>
           <div class="block">
             <div class="l">For new engagements</div>
-            <div class="v"><a href="mailto:partners@riaadvisory.com">partners@riaadvisory.com</a></div>
+            <div class="v"><a href="mailto:partners@riatesh.com">partners@riatesh.com</a></div>
           </div>
           <div class="block">
             <div class="l">Media &amp; analysts</div>
-            <div class="v"><a href="mailto:press@riaadvisory.com">press@riaadvisory.com</a></div>
+            <div class="v"><a href="mailto:press@riatesh.com">press@riatesh.com</a></div>
           </div>
           <div class="block">
             <div class="l">Careers</div>
-            <div class="v"><a href="mailto:careers@riaadvisory.com">careers@riaadvisory.com</a></div>
+            <div class="v"><a href="mailto:careers@riatesh.com">careers@riatesh.com</a></div>
           </div>
           <div class="block">
             <div class="l">Global headquarters</div>
@@ -3390,7 +3479,7 @@ html, body { overflow-x: hidden; max-width: 100vw; }
       <div class="footer-top">
         <div class="footer-brand">
           <h4>Revenue management, reimagined.</h4>
-          <p>RIA Advisory partners with the world's most demanding enterprises to design, build, and operate the systems that move money.</p>
+          <p>RIATesh Advisory partners with the world's most demanding enterprises to design, build, and operate the systems that move money.</p>
         </div>
         <div class="footer-col">
           <h5>Capabilities</h5>
@@ -3420,9 +3509,9 @@ html, body { overflow-x: hidden; max-width: 100vw; }
           </ul>
         </div>
       </div>
-      <div class="brand-mark-lg">R<em>I</em>A</div>
+      <div class="brand-mark-lg">RIA<em>tesh</em></div>
       <div class="footer-bottom">
-        <div>© <span id="y">2026</span> RIA Advisory LLC · Coral Gables, FL</div>
+        <div>© <span id="y">2026</span> RIATesh Advisory LLC · Coral Gables, FL</div>
         <div><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">LinkedIn</a></div>
       </div>
     </div>
